@@ -10,7 +10,6 @@ func RangeKeyWords() {
 		sum += num
 	}
 	fmt.Println("sum:", sum)
-	fmt.Print("啊啊啊啊")
 
 	for i, num := range nums {
 		if num == 2 {
