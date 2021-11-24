@@ -1,0 +1,18 @@
+{
+    "sourceFile": "nine-nine-multiple-chart.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1636539849478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1636539849478,
+            "name": "Commit-0",
+            "content": "// package main\n\n// import \"fmt\"\n\n// func main() {\n\n// \tvar i, j int\n\n// \tfor i = 2; i < 100; i++ {\n// \t\tfor j = 2; j <= (i / j); j++ {\n// \t\t\tif i%j == 0 {\n// \t\t\t\tbreak // 如果发现因子，则不是素数\n// \t\t\t}\n// \t\t}\n// \t\tif j > (i / j) {\n// \t\t\tfmt.Printf(\"%d  是素数\\n\", i)\n// \t\t}\n// \t}\n// }\n"
+        }
+    ]
+}

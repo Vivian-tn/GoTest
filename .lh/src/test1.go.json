@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/test1.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1636539849537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636539849596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import \"fmt\"\n \n func main() {\n-\tfmt.Println(\"Vivian\")\n+\tfmt.Println(\"黄中武吃屁\")\n \tfmt.Println(\"田宁\")\n \tvar stockcode = 123\n \tvar enddate = \"2020-12-31\"\n \tvar url = \"Code=%d&endDate=%s\"\n"
+                }
+            ],
+            "date": 1636539849537,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"黄中武吃屁\")\n\tfmt.Println(\"田宁\")\n\tvar stockcode = 123\n\tvar enddate = \"2020-12-31\"\n\tvar url = \"Code=%d&endDate=%s\"\n\tvar target_url = fmt.Sprintf(url, stockcode, enddate)\n\tfmt.Println(target_url)\n\n\tvar i, j int = 1, 2\n\tvar b = \"2131\"\n\tfmt.Println(i, j, b)\n\n\tvar a [3]int\n\ta[0] = 1\n\ta[1] = 2\n\ta[2] = 3\n\tfmt.Println(a)\n\n\tx := [5]int{10, 20, 30, 40, 50}\n\tarray := make([]int64, 2)\n\tfmt.Println(x, array)\n\n\ty := [5]int{2: 10, 4: 40}\n\tfmt.Println(y)\n\n}\n"
+        }
+    ]
+}
