@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testNew/pkg"
+)
 
 func main() {
 	fmt.Println("vivian")
@@ -28,33 +31,9 @@ func main() {
 	y := [5]int{2: 10, 4: 40}
 	fmt.Println(y)
 
-	forXunHuan()
-	rangeExample()
-}
+	//forXunHuan()
+	//rangeExample()
 
-func forXunHuan() {
-	tests := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	for i, test := range tests {
-		if i < 3 {
-			fmt.Println("default")
-		} else {
-			fmt.Println(test)
-		}
-	}
-}
-func rangeExample() {
-	nums := []int{2, 3, 4}
-	sum := 0
-	for _, num := range nums {
-		sum += num
-	}
-	fmt.Println("sum:", sum)
-
-	for i, num := range nums {
-		if num == 2 {
-			fmt.Println("下标索引值是：", i)
-		}
-	}
-
-	//kvs := map
+	pkg.ForXunHuan()
+	pkg.RangeKeyWords()
 }
