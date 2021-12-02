@@ -9,6 +9,7 @@ func ForXunHuan() {
 			fmt.Println("default")
 		} else {
 			fmt.Println(test)
+			fmt.Println("test")
 		}
 	}
 }
