@@ -37,5 +37,17 @@ func main() {
 	pkg.ForXunHuan()
 	pkg.RangeKeyWords()
 
-	fmt.Println("test")
+	var width, height = 100, 50 //"int" is dropped
+
+	fmt.Println("width is", width, "height is", height)
+	//width is 100 height is 50
+
+	var (
+		name    = "naveen"
+		age     = 29
+		height1 int
+	)
+	fmt.Println("my name is", name, ", age is", age, "and height is", height1)
+	//my name is naveen , age is 29 and height is 0
+
 }
