@@ -1,0 +1,37 @@
+# git.in.zhihu.com/go/base v0.10.20
+git.in.zhihu.com/go/base/telemetry/internal/halo
+git.in.zhihu.com/go/base/telemetry/log
+git.in.zhihu.com/go/base/telemetry/log/internal/hooks/sentry
+git.in.zhihu.com/go/base/telemetry/log/internal/hooks/statsd
+git.in.zhihu.com/go/base/telemetry/statsd
+git.in.zhihu.com/go/base/zae
+git.in.zhihu.com/go/base/zae/internal/cgroup
+# git.in.zhihu.com/go/logrus v1.0.0
+git.in.zhihu.com/go/logrus
+# git.in.zhihu.com/zhsearch/search-ingress v0.0.0-20211202125821-24e8d6b037b0
+## explicit
+git.in.zhihu.com/zhsearch/search-ingress/pkg/log
+git.in.zhihu.com/zhsearch/search-ingress/pkg/util/statsd
+# github.com/DataDog/datadog-go v4.2.0+incompatible
+github.com/DataDog/datadog-go/statsd
+# github.com/apache/thrift v0.12.0
+github.com/apache/thrift/lib/go/thrift
+# github.com/bmhatfield/go-runtime-metrics v0.0.0-20160512180836-3af15b63454c
+github.com/bmhatfield/go-runtime-metrics/collector
+# github.com/certifi/gocertifi v0.0.0-20200922220541-2c3bb06c6054
+github.com/certifi/gocertifi
+# github.com/getsentry/raven-go v0.2.0
+github.com/getsentry/raven-go
+# github.com/juju/ratelimit v1.0.1
+github.com/juju/ratelimit
+# github.com/pkg/errors v0.9.1
+github.com/pkg/errors
+# golang.org/x/net v0.0.0-20211201190559-0a0e4e1bb54c
+## explicit
+golang.org/x/net/context
+# golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# gopkg.in/alexcesaro/statsd.v2 v2.0.0
+gopkg.in/alexcesaro/statsd.v2

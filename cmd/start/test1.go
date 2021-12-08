@@ -36,6 +36,7 @@ func main() {
 
 	pkg.ForXunHuan()
 	pkg.RangeKeyWords()
+	pkg.ZhengZe()
 
 	var width, height = 100, 50 //"int" is dropped
 
