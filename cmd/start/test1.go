@@ -38,7 +38,4 @@ func main() {
 	pkg.RangeKeyWords()
 	pkg.ZhengZe()
 
-	match := "1" == "1"
-	fmt.Println(match)
-
 }
