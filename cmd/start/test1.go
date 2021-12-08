@@ -36,4 +36,9 @@ func main() {
 
 	pkg.ForXunHuan()
 	pkg.RangeKeyWords()
+	pkg.ZhengZe()
+
+	match := "1" == "1"
+	fmt.Println(match)
+
 }
