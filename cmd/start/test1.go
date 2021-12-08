@@ -36,4 +36,6 @@ func main() {
 
 	pkg.ForXunHuan()
 	pkg.RangeKeyWords()
+
+	fmt.Println("test")
 }
