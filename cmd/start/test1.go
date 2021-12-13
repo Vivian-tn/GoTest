@@ -34,10 +34,6 @@ func main() {
 	//forXunHuan()
 	//rangeExample()
 
-	pkg.ForXunHuan()
-	pkg.RangeKeyWords()
-	pkg.ZhengZe()
-
 	var width, height = 100, 50 //"int" is dropped
 
 	fmt.Println("width is", width, "height is", height)
@@ -50,5 +46,10 @@ func main() {
 	)
 	fmt.Println("my name is", name, ", age is", age, "and height is", height1)
 	//my name is naveen , age is 29 and height is 0
+
+	//pkg.ForXunHuan()
+	//pkg.RangeKeyWords()
+	//pkg.ZhengZe()
+	pkg.SynMap()
 
 }
