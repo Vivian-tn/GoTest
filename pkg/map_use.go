@@ -35,4 +35,7 @@ func MapUse() {
 	for k, v := range m1 {
 		fmt.Println(k, v)
 	}
+
+	//uniqueMaps := make(map[string]struct{})
+	//removeDupItems := make([]search.MetaModel, 0)
 }
