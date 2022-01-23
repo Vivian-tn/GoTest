@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+	ss := String("Article")
+	fmt.Println(*ss)
 	os.Setenv("FOO", "1")
 	fmt.Println("FOO:", os.Getenv("FOO"))
 	fmt.Println("BAR:", os.Getenv("BAR"))
@@ -110,4 +112,7 @@ func getType(a interface{}) {
 	default:
 		fmt.Println("unknown type")
 	}
+}
+func String(s string) *string {
+	return &s
 }
