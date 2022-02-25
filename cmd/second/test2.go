@@ -25,3 +25,10 @@ func main() {
 	w.WriteAll(data) //写入数据
 	w.Flush()
 }
+
+//func main() {
+//	filename := "person_list1.csv"
+//	if _, err := os.Stat(filename); os.IsNotExist(err) {
+//		fmt.Println("file does not exist")
+//	}
+//}
