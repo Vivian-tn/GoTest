@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	filename := "test.csv"
+	filename := "./test.csv"
 	if _, err := os.Stat(filename); os.IsNotExist(err) {
 		fmt.Println("file does not exist")
 	} else {

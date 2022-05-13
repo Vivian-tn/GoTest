@@ -20,6 +20,29 @@ type Huang struct {
 
 func main() {
 	//ning := make(map[int64]Huang)
-	i := 8
-	fmt.Printf("i is %+v", i)
+	//i := 8
+	//fmt.Printf("i is %+v", i)
+
+	c := make(chan int)
+
+	go func() {
+
+		c <- 1
+		c <- 2
+		c <- 3
+		close(c)
+	}()
+
+	for v := range c {
+		fmt.Println(v)
+	}
+
+	queryTitles := []int{3, 2, 1}
+	for _, q := range queryTitles {
+		for v := range c {
+			if q == v {
+				fmt.Println(v)
+			}
+		}
+	}
 }

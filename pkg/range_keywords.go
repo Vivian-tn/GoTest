@@ -29,4 +29,9 @@ func RangeKeyWords() {
 	for i, c := range "go" {
 		fmt.Println(i, c)
 	}
+
+
+
+
+
 }
