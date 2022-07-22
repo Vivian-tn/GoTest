@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// 不存在则创建;存在则清空;读写模式;
-	file, err := os.Create("./info_box_city_exam_schedule.csv")
+	file, err := os.Create("./monitor_data.csv")
 	if err != nil {
 		fmt.Println("open file is failed, err: ", err)
 	}
@@ -70,6 +70,22 @@ func main() {
 		// 刷新缓冲
 		w.Flush()
 	}
+
+	now := time.Now()
+
+	fmt.Println(now)
+
+	// 必须使用这个时间才能返回正确的格式化后的时间，其他的都不行
+	fmt.Println(now.Format("2006/1/2 15:04:05"))
+	fmt.Println(now.Format("2006/01/02 15:04:05"))
+	fmt.Println(now.Format("15:04:05 2006/1/2"))
+	fmt.Println(now.Format("2006/1/2"))
+
+	ts := time.Now().AddDate(0, 0, -1)
+	timeYesterDay := time.Date(ts.Year(), ts.Month(), ts.Day(), 0, 0, 0, 0, ts.Location()).Unix()
+	ts1 := time.Now().AddDate(0, 0, -2)
+	timeYesterDay1 := time.Date(ts.Year(), ts.Month(), ts.Day(), 0, 0, 0, 0, ts1.Location()).Unix()
+	fmt.Println(ts, ts1, timeYesterDay, timeYesterDay1)
 }
 
 var (

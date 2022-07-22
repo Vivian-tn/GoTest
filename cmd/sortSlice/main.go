@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	"strings"
+	"time"
 )
 
 //type Ordered interface {
@@ -37,4 +38,12 @@ func main() {
 		return strings.Compare(s3[i], s3[j]) == -1
 	})
 	fmt.Println(s3) // [amy jim tom]
+
+	fmt.Println(0 % 100)
+	ts := time.Now().AddDate(0, 0, -7)
+	timeYesterDay := time.Date(ts.Year(), ts.Month(), ts.Day(), 0, 0, 0, 0, ts.Location()).Unix()
+	ts1 := time.Now()
+	timeYesterDay1 := time.Date(ts1.Year(), ts1.Month(), ts1.Day(), 0, 0, 0, 0, ts1.Location()).Unix()
+
+	fmt.Println(timeYesterDay, timeYesterDay1) //6.9--6.10
 }

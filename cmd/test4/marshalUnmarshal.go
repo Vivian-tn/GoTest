@@ -57,4 +57,30 @@ func main() {
 	loc, _ := time.LoadLocation("Asia/Shanghai")
 	startTime, _ := time.ParseInLocation("2006/1/2 15:04:05", "2022/4/9 12:00:00", loc)
 	fmt.Println(strconv.FormatInt(startTime.Unix(), 10))
+
+	list := time.Unix(int64(1654135200), 0)
+	now := time.Now()          //取到当前的时间点
+	subM := now.Sub(list)      //通过这个方法我们可以将两个事件差值计算出来
+	hours := int(subM.Hours()) //我们打印一下相距的小时数
+	fmt.Println(hours)
+
+	fmt.Println(list.Format("2006-01-02 15:04:05"), "=============之前的时间小时是")
+	fmt.Println(list.Month(), "==月份") //我们检查一下打印的时间 用于检测下面放下计算出是对的还是错的
+	fmt.Println(list.Day(), "==天数")
+	fmt.Println(list.Hour(), "==小时")
+	fmt.Println(int(subM.Hours()), "Hours") //我们打印一下相距的小时数
+	fmt.Println(now.Format("2006-01-02 15:04:05"), "=============系统当前时间的时间小时是")
+	fmt.Println(now.Month(), "==月份")
+	fmt.Println(now.Day(), "==天数")
+	fmt.Println(now.Hour(), "==小时")
+	fmt.Println(time.Now().Unix())
+	fmt.Println(time.Now().AddDate(0, 0, -10).Unix(), "打印")
+
+	t := time.Now()
+	timeToday := time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, t.Location()).Unix()
+	// 昨日0点时间戳
+	ts := time.Now().AddDate(0, 0, -1)
+	timeYesterDay := time.Date(ts.Year(), ts.Month(), ts.Day(), 0, 0, 0, 0, ts.Location()).Unix()
+	fmt.Println("timeToday:", timeToday, "==timeYesterDay:", timeYesterDay)
+
 }

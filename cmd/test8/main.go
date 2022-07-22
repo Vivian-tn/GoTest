@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	"time"
 )
 
 func main() {
@@ -122,23 +122,26 @@ func main() {
 	//}
 	//fmt.Println(s)
 
-	m := make(map[int]string)
-	m[1] = "a"
-	m[2] = "c"
-	m[0] = "b"
+	// m := make(map[int]string)
+	// m[1] = "a"
+	// m[2] = "c"
+	// m[0] = "b"
 
-	// To store the keys in slice in sorted order
-	var keys []int
-	for k := range m {
-		keys = append(keys, k)
-	}
-	sort.Ints(keys)
+	// // To store the keys in slice in sorted order
+	// var keys []int
+	// for k := range m {
+	// 	keys = append(keys, k)
+	// }
+	// sort.Ints(keys)
 
-	// To perform the opertion you want
-	for _, k := range keys {
-		fmt.Println("Key:", k, "Value:", m[k])
-	}
-
+	// // To perform the opertion you want
+	// for _, k := range keys {
+	// 	fmt.Println("Key:", k, "Value:", m[k])
+	// }
+	// now := time.Now()
+	fmt.Printf("%v 天\n", int64(time.Unix(1654567200, 0).Sub(time.Now().Local()).Hours()/24))
+	str := "wanyang,songye"
+	fmt.Println(str + "tianning")
 }
 
 func swap(s []int, i, j int) {
