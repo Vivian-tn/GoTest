@@ -1,58 +1,175 @@
-# git.in.zhihu.com/go/base v0.10.20
+# git.apache.org/thrift.git v0.0.0-20171203172758-327ebb6c2b6d
+git.apache.org/thrift.git/lib/go/thrift
+# git.in.zhihu.com/commercial/ad-service v0.0.0-20200511064120-da0c8d8caf47
+## explicit
+# git.in.zhihu.com/go/base v0.10.34
+git.in.zhihu.com/go/base/internal/diplomat
+git.in.zhihu.com/go/base/internal/request
+git.in.zhihu.com/go/base/telemetry
 git.in.zhihu.com/go/base/telemetry/internal/halo
+git.in.zhihu.com/go/base/telemetry/internal/tracer/jaeger
 git.in.zhihu.com/go/base/telemetry/log
 git.in.zhihu.com/go/base/telemetry/log/internal/hooks/sentry
 git.in.zhihu.com/go/base/telemetry/log/internal/hooks/statsd
+git.in.zhihu.com/go/base/telemetry/sentry
 git.in.zhihu.com/go/base/telemetry/statsd
+git.in.zhihu.com/go/base/tzone
+git.in.zhihu.com/go/base/tzone/internal/decoder
+git.in.zhihu.com/go/base/tzone/internal/decoder/general
+git.in.zhihu.com/go/base/tzone/internal/decoder/protocol
+git.in.zhihu.com/go/base/tzone/internal/decoder/protocol/binary
+git.in.zhihu.com/go/base/tzone/internal/errors
+git.in.zhihu.com/go/base/tzone/internal/middleware
 git.in.zhihu.com/go/base/zae
 git.in.zhihu.com/go/base/zae/internal/cgroup
 # git.in.zhihu.com/go/logrus v1.0.0
 git.in.zhihu.com/go/logrus
-# git.in.zhihu.com/zhsearch/search-ingress v0.0.0-20211202125821-24e8d6b037b0
+# git.in.zhihu.com/go/ztext v0.1.7
+git.in.zhihu.com/go/ztext/escape
+git.in.zhihu.com/go/ztext/link
+git.in.zhihu.com/go/ztext/node
+git.in.zhihu.com/go/ztext/util
+git.in.zhihu.com/go/ztext/ztext
+# git.in.zhihu.com/pb-go/tag-core-proto v0.1.7
 ## explicit
+# git.in.zhihu.com/production_backend/pier v1.1.4
+git.in.zhihu.com/production_backend/pier
+# git.in.zhihu.com/thrift-go/billboard_thrift v1.0.21
+## explicit
+# git.in.zhihu.com/thrift-go/comment_thrift v0.0.77
+## explicit
+# git.in.zhihu.com/thrift-go/content_profile_service_thrift v0.0.0-20200713102200-c73a456d2568
+## explicit
+# git.in.zhihu.com/thrift-go/feed_service_thrift v0.3.99
+## explicit
+# git.in.zhihu.com/thrift-go/get_brand_rpc_thrift v0.0.0-20200224104706-cdacdd394685
+## explicit
+# git.in.zhihu.com/thrift-go/knnservice_thrift v0.1.3
+## explicit
+# git.in.zhihu.com/thrift-go/olr_thrift v0.0.0-20200713094653-db6fe89f33c8
+## explicit
+# git.in.zhihu.com/thrift-go/pico3_thrift v0.2.10
+git.in.zhihu.com/thrift-go/pico3_thrift
+# git.in.zhihu.com/thrift-go/search_rel_search_thrift v0.0.11
+## explicit
+# git.in.zhihu.com/thrift-go/topic_match_thrift v0.0.0-20200713102532-58e2f4ad2e48
+## explicit
+# git.in.zhihu.com/thrift-go/topic_thrift v1.3.0
+## explicit
+# git.in.zhihu.com/thrift-go/user_profile_service_thrift v0.0.0-20190513034348-a6002e612941
+## explicit
+# git.in.zhihu.com/zhihu/pin v0.0.0-20211115093103-eca910966a49
+## explicit
+# git.in.zhihu.com/zhihu/profiled v0.0.0-20181128024425-f98536c442c4
+## explicit
+# git.in.zhihu.com/zhsearch/search-ingress v0.0.0-20220826035108-183534b87897
+## explicit
+git.in.zhihu.com/zhsearch/search-ingress/pkg/common/ztext2
 git.in.zhihu.com/zhsearch/search-ingress/pkg/log
 git.in.zhihu.com/zhsearch/search-ingress/pkg/util/statsd
 # github.com/DataDog/datadog-go v4.2.0+incompatible
 github.com/DataDog/datadog-go/statsd
+# github.com/alecthomas/chroma v0.8.0
+github.com/alecthomas/chroma
+github.com/alecthomas/chroma/formatters/html
+github.com/alecthomas/chroma/lexers
+github.com/alecthomas/chroma/lexers/a
+github.com/alecthomas/chroma/lexers/b
+github.com/alecthomas/chroma/lexers/c
+github.com/alecthomas/chroma/lexers/circular
+github.com/alecthomas/chroma/lexers/d
+github.com/alecthomas/chroma/lexers/e
+github.com/alecthomas/chroma/lexers/f
+github.com/alecthomas/chroma/lexers/g
+github.com/alecthomas/chroma/lexers/h
+github.com/alecthomas/chroma/lexers/i
+github.com/alecthomas/chroma/lexers/internal
+github.com/alecthomas/chroma/lexers/j
+github.com/alecthomas/chroma/lexers/k
+github.com/alecthomas/chroma/lexers/l
+github.com/alecthomas/chroma/lexers/m
+github.com/alecthomas/chroma/lexers/n
+github.com/alecthomas/chroma/lexers/o
+github.com/alecthomas/chroma/lexers/p
+github.com/alecthomas/chroma/lexers/q
+github.com/alecthomas/chroma/lexers/r
+github.com/alecthomas/chroma/lexers/s
+github.com/alecthomas/chroma/lexers/t
+github.com/alecthomas/chroma/lexers/v
+github.com/alecthomas/chroma/lexers/w
+github.com/alecthomas/chroma/lexers/x
+github.com/alecthomas/chroma/lexers/y
+github.com/alecthomas/chroma/lexers/z
+github.com/alecthomas/chroma/styles
+# github.com/aliyun/aliyun-oss-go-sdk v2.1.4+incompatible
+github.com/aliyun/aliyun-oss-go-sdk/oss
 # github.com/apache/thrift v0.12.0
 github.com/apache/thrift/lib/go/thrift
 # github.com/bmhatfield/go-runtime-metrics v0.0.0-20160512180836-3af15b63454c
 github.com/bmhatfield/go-runtime-metrics/collector
 # github.com/certifi/gocertifi v0.0.0-20200922220541-2c3bb06c6054
 github.com/certifi/gocertifi
+# github.com/danwakefield/fnmatch v0.0.0-20160403171240-cbb64ac3d964
+github.com/danwakefield/fnmatch
+# github.com/dlclark/regexp2 v1.2.0
+github.com/dlclark/regexp2
+github.com/dlclark/regexp2/syntax
 # github.com/getsentry/raven-go v0.2.0
 github.com/getsentry/raven-go
+# github.com/hashicorp/golang-lru v0.5.4
+github.com/hashicorp/golang-lru
+github.com/hashicorp/golang-lru/simplelru
 # github.com/juju/ratelimit v1.0.1
 github.com/juju/ratelimit
+# github.com/opentracing/opentracing-go v1.2.0
+github.com/opentracing/opentracing-go
+github.com/opentracing/opentracing-go/ext
+github.com/opentracing/opentracing-go/log
 # github.com/pkg/errors v0.9.1
 github.com/pkg/errors
 # github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca
 ## explicit
 github.com/saintfish/chardet
-# golang.org/x/net v0.0.0-20211201190559-0a0e4e1bb54c
+# github.com/uber/jaeger-client-go v2.25.0+incompatible
+github.com/uber/jaeger-client-go
+github.com/uber/jaeger-client-go/internal/baggage
+github.com/uber/jaeger-client-go/internal/reporterstats
+github.com/uber/jaeger-client-go/internal/spanlog
+github.com/uber/jaeger-client-go/internal/throttler
+github.com/uber/jaeger-client-go/log
+github.com/uber/jaeger-client-go/thrift
+github.com/uber/jaeger-client-go/thrift-gen/agent
+github.com/uber/jaeger-client-go/thrift-gen/jaeger
+github.com/uber/jaeger-client-go/thrift-gen/sampling
+github.com/uber/jaeger-client-go/thrift-gen/zipkincore
+github.com/uber/jaeger-client-go/utils
+github.com/uber/jaeger-client-go/zipkin
+# github.com/uber/jaeger-lib v2.4.1+incompatible
+github.com/uber/jaeger-lib/metrics
+# go.uber.org/atomic v1.8.0
+go.uber.org/atomic
+# golang.org/x/net v0.0.0-20220517181318-183a9ca12b87
 ## explicit
 golang.org/x/net/context
-# golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c
+golang.org/x/net/html
+golang.org/x/net/html/atom
+# golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+golang.org/x/sync/singleflight
+# golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/text v0.3.6
+# golang.org/x/text v0.3.7
 ## explicit
 golang.org/x/text/encoding
 golang.org/x/text/encoding/internal
 golang.org/x/text/encoding/internal/identifier
 golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/runes
 golang.org/x/text/transform
+# golang.org/x/time v0.0.0-20191024005414-555d28b269f0
+golang.org/x/time/rate
 # gopkg.in/alexcesaro/statsd.v2 v2.0.0
 gopkg.in/alexcesaro/statsd.v2
-# gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a
-gopkg.in/bsm/ratelimit.v1
 # gopkg.in/redis.v4 v4.2.4
 ## explicit
-gopkg.in/redis.v4
-gopkg.in/redis.v4/internal
-gopkg.in/redis.v4/internal/consistenthash
-gopkg.in/redis.v4/internal/errors
-gopkg.in/redis.v4/internal/hashtag
-gopkg.in/redis.v4/internal/pool
-gopkg.in/redis.v4/internal/proto

@@ -8,8 +8,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"git.in.zhihu.com/go/base/zae"
 	"github.com/DataDog/datadog-go/statsd"
+
+	"git.in.zhihu.com/go/base/zae"
+)
+
+const (
+	MetadataApp = "app"
 )
 
 type Client interface {
@@ -22,8 +27,19 @@ type Client interface {
 }
 
 func New(prefix string, addrs ...string) (Client, error) {
+	return NewWithOptions(prefix, WithAddrs(addrs...))
+}
+
+func NewWithOptions(prefix string, opts ...option) (Client, error) {
+	o := &options{
+		metadata: true,
+	}
+	for _, opt := range opts {
+		opt(o)
+	}
+
 	var addr string
-	switch len(addrs) {
+	switch len(o.addrs) {
 	case 0:
 		if defaultAddr, err := zae.DiscoveryOne(zae.ResourceStatsd, "default", ""); err == nil {
 			addr = defaultAddr.Host
@@ -31,26 +47,45 @@ func New(prefix string, addrs ...string) (Client, error) {
 			addr = "status:8126"
 		}
 	case 1:
-		addr = addrs[0]
+		addr = o.addrs[0]
 	default:
-		return nil, fmt.Errorf("invalid addr %v", addrs)
+		return nil, fmt.Errorf("invalid addr %v", o.addrs)
 	}
 	if prefix != "" && !Verify(prefix) {
 		return nil, fmt.Errorf("invalid prefix %v", prefix)
 	}
 
+	if o.metadata {
+		if o.globalTags == nil {
+			o.globalTags = make(map[string]string)
+		}
+		o.globalTags[MetadataApp] = zae.App()
+	}
+
+	tags := make([]string, 0, len(o.globalTags))
+	for k, v := range o.globalTags {
+		if strings.ContainsAny(k, ":,") {
+			return nil, fmt.Errorf("invalid tag key %v", k)
+		}
+		if strings.ContainsAny(v, ":,") {
+			return nil, fmt.Errorf("invalid tag value %v", v)
+		}
+		tags = append(tags, k+":"+v)
+	}
+
 	var client *statsd.Client
 	var err error
 
-	opts := []statsd.Option{
+	sopts := []statsd.Option{
 		statsd.WithClientSideAggregation(),
 		statsd.WithoutTelemetry(),
+		statsd.WithTags(tags),
 	}
 	if len(prefix) > 0 {
-		opts = append(opts, statsd.WithNamespace(prefix))
+		sopts = append(sopts, statsd.WithNamespace(prefix))
 	}
 
-	client, err = statsd.New(addr, opts...)
+	client, err = statsd.New(addr, sopts...)
 	if err != nil {
 		return nil, err
 	}
@@ -64,7 +99,9 @@ func New(prefix string, addrs ...string) (Client, error) {
 		name:    name,
 		client:  client,
 		metrics: new(Metrics),
-		limiter: newLimiter(100, time.Minute),
+		// 频控 5K QPS，与原 go/box 实现保持一致
+		limiter: newLimiter(5000, time.Minute),
+		closing: make(chan struct{}),
 	}
 
 	go wrap.reporter()

@@ -11,16 +11,25 @@ import (
 	"git.in.zhihu.com/go/logrus"
 )
 
-var manager logManager
+var (
+	manager logManager
+	managerOnce = sync.Once{}
+)
+
+func getManager() *logManager {
+	managerOnce.Do(func() {
+		manager = logManager{
+			loggerStore: sync.Map{},
+		}
+	})
+	return &manager
+}
 
 func init() {
-	manager = logManager{
-		loggerStore: sync.Map{},
-	}
 	std = newDefaultLogger()
 	addHooks(std)
 	// add default logger to manager
-	manager.add(std.GetName(), std)
+	getManager().add(std.GetName(), std)
 }
 
 type ZLogger struct {
@@ -55,7 +64,7 @@ func GetLogger(name string) *ZLogger {
 		return StandardLogger()
 	}
 
-	if logger := manager.getLogger(name); logger != nil {
+	if logger := getManager().getLogger(name); logger != nil {
 		return logger
 	}
 
@@ -68,7 +77,7 @@ func newLogger(name string) *ZLogger {
 	addHooks(logger)
 
 	// add logger to the manager
-	manager.add(name, logger)
+	getManager().add(name, logger)
 	return logger
 }
 
@@ -89,7 +98,7 @@ func newDefaultLogger() *ZLogger {
 // GetLoggers return the loggers owned by the log manager
 func GetLoggers() []*ZLogger {
 	var rets []*ZLogger
-	manager.loggerStore.Range(func(k, v interface{}) bool {
+	getManager().loggerStore.Range(func(k, v interface{}) bool {
 		rets = append(rets, v.(*ZLogger))
 		return true
 	})

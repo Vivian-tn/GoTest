@@ -183,24 +183,35 @@ func (c *Client) aggreCount(bucket string, count int64) {
 }
 
 func (c *Client) flush() (dropped int) {
+	invalidBucket := ""
 	c.buffer.Range(func(key, value interface{}) bool {
 		bucket := key.(string)
 		if !ValidBucket(bucket) {
 			dropped++
+			invalidBucket = bucket
 			return true
 		}
 
-		aMetric := value.(*aggreMetric)
-		// count 跟 gauge 的 bucket 可能是同一个
-		if count := aMetric.Count(); count > 0 {
-			c.cli.Count(bucket, count)
-		}
-		if gauge := aMetric.Gauge(); gauge != nil {
-			c.cli.Gauge(bucket, gauge)
+		aMetric, ok := value.(*aggreMetric)
+		if ok {
+			// count 跟 gauge 的 bucket 可能是同一个
+			if count := aMetric.Count(); count > 0 {
+				c.cli.Count(bucket, count)
+			}
+			if gauge := aMetric.Gauge(); gauge != nil {
+				c.cli.Gauge(bucket, gauge)
+			}
+		} else {
+			// should not happen
+			// log.Errorf("invalid metric type: bucket=%s, value=%+v", bucket, value)
+			log.Errorf("invalid metric type: bucket=%s", bucket)
 		}
 		c.buffer.Delete(bucket)
 		return true
 	})
+	if invalidBucket != "" {
+		log.Errorf("invalid statsd metric: `%s`", invalidBucket)
+	}
 	return dropped
 }
 
