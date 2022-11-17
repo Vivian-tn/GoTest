@@ -56,7 +56,7 @@ func main() {
 	fmt.Println("@@@@@@@@@@@222")
 	a := strings.Trim("端午节祝福", "端福")
 	fmt.Println(a)
-	fmt.Println(strings.Trim(a, "祝福"))
+	fmt.Println(strings.Trim(a, "祝福")) //去掉字符串s中首部以及尾部与字符串cutset中每个相匹配的字符
 	fmt.Println(strings.Trim("Hello, Gophersh", "Hh"))
 
 }
