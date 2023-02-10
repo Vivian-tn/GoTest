@@ -14,7 +14,6 @@ import (
 	"sync"
 
 	"git.in.zhihu.com/zhsearch/search-ingress/pkg/log"
-	"git.in.zhihu.com/zhsearch/search-ingress/pkg/util/statsd"
 	"golang.org/x/net/context"
 )
 
@@ -71,7 +70,6 @@ func (g *Group) Go(f func() error) {
 				}
 				//debug.PrintStack()
 
-				statsd.Increment("search-ingress.bug.panic.count")
 			}
 		}()
 
