@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	filename := "./test.csv"
+	filename := "./test1.csv"
 	if _, err := os.Stat(filename); os.IsNotExist(err) {
 		fmt.Println("file does not exist")
 	} else {
@@ -29,12 +29,18 @@ func main() {
 		   3、大文件时使用逐行读取，小文件直接读取所有然后遍历，两者应用场景不一样，需要注意。
 		*/
 		//获取一行内容，一般为第一行内容
-		read, _ := p.Read() //返回切片类型：[chen  hai wei]
-		fmt.Println(read)
+		//read, _ := p.Read() //返回切片类型：[chen  hai wei]
+		//fmt.Println(read)
 
 		//读取所有内容
 		ReadAll, err := p.ReadAll() //返回切片类型：[[s s ds] [a a a]]
 		fmt.Println(ReadAll)
+
+		fmt.Println("===================")
+
+		for _, strings := range ReadAll {
+			fmt.Println(strings)
+		}
 	}
 
 }

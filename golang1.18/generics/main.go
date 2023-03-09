@@ -5,10 +5,23 @@ import (
 	"github.com/samber/lo"
 	lop "github.com/samber/lo/parallel"
 	"golang.org/x/exp/constraints"
+	"sort"
 	"strconv"
+	"strings"
 )
 
 func main() {
+
+	//tt
+	a := []int{1, 2, 3}
+	a = []int{4, 5, 6}
+	fmt.Println(a)
+	b := []string{"b", "c", "a"}
+	fmt.Println(strings.Join(b, "、"))
+
+	aa := []string{"Sbmuel", "Marc", "Samuel"}
+	sort.Strings(aa)
+	fmt.Println("=======排序", aa)
 	// 切片去重
 	names := lo.Uniq([]string{"Samuel", "Marc", "Samuel"})
 	fmt.Println("切片去重", names)
